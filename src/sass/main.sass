@@ -1,0 +1,40 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.container
+  max-width: 500px
+  margin: 30px auto
+  &:hover
+    .MuiSvgIcon-root, .delete-btn
+      opacity: 1
+  table
+    th, td
+      padding: 10px
+      padding-left: 10px
+      padding-right: 10px
+      border-bottom: 0
+  thead
+    margin-bottom: 20px
+
+.MuiSvgIcon-root
+  opacity: 0
+  transition: all 0.2s
+
+.delete-btn
+  user-select: none
+  cursor: pointer
+  height: auto
+  background: transparent
+  border: none
+  font-size: 25px
+  opacity: 0
+  transition: all 0.2s
+
+.active-btns
+  opacity: 1
+
+@import './modules/_header'
+@import './modules/_row'
+@import './modules/_mui'

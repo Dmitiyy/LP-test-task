@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import { Header } from './components/Header';
+import { Row } from './components/Row';
+import { useSelector } from 'react-redux'
+import { RootState } from './store';
+import './sass/main.sass';
 
 function App() {
+  const items = useSelector((state: RootState) => state.commodities);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Table>
+        <Header />
+        <TableBody>
+          {
+            items.commodities.map((item, index) => {
+              const { id, name } = item;
+              return (
+                <Row key={id + index + name} {...item} />
+              )
+            })
+          }
+        </TableBody>
+      </Table>
     </div>
   );
 }

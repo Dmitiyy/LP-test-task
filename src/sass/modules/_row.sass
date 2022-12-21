@@ -1,0 +1,43 @@
+.row
+  .MuiInput-root
+    &::before
+      border-bottom: none
+  &-input
+    display: flex
+    align-items: center
+    position: relative
+    svg
+      margin-right: 10px
+      width: 20px
+      height: 20px
+      margin-top: 7px
+      cursor: pointer
+    div
+      width: 70px
+  &-id
+    width: 10px
+  &-icons
+    width: 150px !important
+    height: 70px
+    background: #fff
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15)
+    backdrop-filter: blur(2px)
+    position: absolute
+    border-radius: 10px
+    top: 50px
+    left: 60px
+    z-index: 999999
+  &:hover
+    background: #cacaca6a
+  &-highlighted
+    background: rgba(81, 81, 81, 0.26)
+    position: relative
+    &::after
+      content: ''
+      width: 10px
+      height: 100%
+      background: #515151
+      border-radius: 5px 0 0 5px
+      position: absolute
+      left: -10px
+      top: 0

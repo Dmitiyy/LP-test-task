@@ -1,0 +1,36 @@
+.MuiSelect-select
+  &:focus
+    background-color: transparent !important
+    .MuiSvgIcon-root, .delete-btn
+      opacity: 1 !important
+
+.MuiList-root
+  max-height: 130px
+  width: 100px
+
+.MuiInput-root
+  &::after
+    border-bottom: 2px solid black !important
+
+.MuiList-root
+  li
+    background-color: transparent !important
+    position: relative
+    &[aria-selected="true"]
+      .header-select-item
+        &::before
+          content: ''
+          width: 4px
+          height: 4px
+          background: black
+          position: absolute
+          left: 7px
+          top: 45%
+          border-radius: 100px
+    .header-select-item
+      width: 100%
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+    &:hover
+      opacity: 0.5
